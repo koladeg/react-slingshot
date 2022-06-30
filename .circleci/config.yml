@@ -12,6 +12,7 @@ jobs:
   build:
     <<: *defaults
     steps:
+      - checkout
       - run: npm i 
       - save_cache: 
           key: "npm packages"
