@@ -14,12 +14,10 @@ jobs:
       - image: cimg/node:18.4.0
     steps:
       - checkout
-      - run: echo "pls"
       - run: npm i 
-      - run: echo "plss"
-      - save_cache: 
-          key: "npm packages"
-          path: /src/node modules
+      # - save_cache: 
+      #     key: "npm packages"
+      #     path: /src/node modules
       - run: npm run lint
   test:
     <<: *defaults
