@@ -15,6 +15,9 @@ jobs:
     steps:
       - checkout
       - run: npm i
+      - save_cache: 
+          key: "npm packages"
+          path: /src/node modules
       - run: npm run lint
   test:
     <<: *defaults
@@ -23,7 +26,6 @@ jobs:
       - restore_cache:
           keys: 
             - "npm packages"
-      - run: npm i 
       - run: npm run test
   analyze:
     <<: *defaults
