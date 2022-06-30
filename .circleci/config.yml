@@ -7,13 +7,16 @@ version: 2.1
 defaults: &defaults
   docker:
     - image: circleci/node:13.8.0
+
 jobs:
   build:
     docker:
       - image: circleci/node:13.8.0
     steps:
       - checkout
+      - run: echo "pls"
       - run: npm i 
+      - run: echo "plss"
       - save_cache: 
           key: "npm packages"
           path: /src/node modules
